@@ -8,8 +8,8 @@ class Raindrop {
   Raindrop(float tX, float tY){
     diam = 20;
     loc = new PVector(tX, tY);
-    vel = new PVector(0,1);
-    acc = new PVector(0,1.1);
+    vel = new PVector(0,.05);
+    acc = new PVector(0,.1);
   }
     
     void fall(){
@@ -19,19 +19,21 @@ class Raindrop {
     void display() {
       fill(0,150,255);
       noStroke();
-      ellipse(tX,tY,diam,diam);
+      ellipse(loc.x,loc.y,diam,diam);
     }
     void reset() {
       loc.x = random(0,width);
       loc.y = 0;
+      vel.y = .05;
     }
-    boolean isInContactWith(){
+    boolean isInContactWith(PVector mouse){
       if(loc.dist(mouse) <= diam/2){
-      reset() = true;
-      }else
-      reset() = false;
+      return true;
+      }else {
+      return false;
       }
-    }
+}
+    
 }
       
         
