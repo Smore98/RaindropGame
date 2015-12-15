@@ -17,7 +17,7 @@ class Raindrop {
       vel.add(acc);
     }
     void display() {
-      fill(0,150,255);
+      fill(0,50,255);
       noStroke();
       ellipse(loc.x,loc.y,diam,diam);
     }
@@ -26,8 +26,8 @@ class Raindrop {
       loc.y = 0;
       vel.y = .05;
     }
-    boolean isInContactWith(PVector mouse){
-      if(loc.dist(mouse) <= diam/2){
+    boolean isInContactWith(Catcher b){
+      if(loc.dist(b.loc) <= diam/2 + b.diam/2){
       return true;
       }else {
       return false;
