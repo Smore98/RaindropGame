@@ -32,9 +32,6 @@ class Raindrop {
       }else {
       return false;
       }
+    }
 }
     
-}
-      
-        
-   
