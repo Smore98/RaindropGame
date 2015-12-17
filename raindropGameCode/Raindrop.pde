@@ -26,6 +26,13 @@ class Raindrop {
       loc.y = 0;
       vel.y = .05;
     }
+    boolean isGone(){
+      if(loc.y >= height) {
+        return true;
+      }else{
+        return false;
+      }
+    }
     boolean isInContactWith(Catcher b){
       if(loc.dist(b.loc) <= diam/2 + b.diam/2){
       return true;
