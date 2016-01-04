@@ -1,12 +1,7 @@
-int score;
-PVector mouse;   //declare a P
+int score; //declare a score interval
+PVector mouse;   //declare a PVector
 ArrayList<Raindrop> raindrops = new ArrayList<Raindrop>(); //declare a new Raindrop called r
 Catcher bucket;
-
-
-// On your own, create an array of Raindrop objects instead of just one
-// Use the array instead of the single object
-// You can start out by just using the single Raindrop as you test
 
 
 void setup() {
@@ -21,13 +16,13 @@ void draw() {
   background(0, 200, 255);
   bucket.display();
   if (score <= 300 && score >= -200) {
-    raindrops.add(new Raindrop(random(0, width), 0));
+    raindrops.add(new Raindrop(random(0, width), 0)); // raindrops will stop dropping once the score is more than less than he values
   }
   if (score >= 300) {
-    text("YOU WIN!", width/2, height/2);
+    text("YOU WIN!", width/2, height/2); //display the win text
   }
-  if (score <= -200){
-  text("YOU LOSE!", width/2, height/2);
+  if (score <= -200) {
+    text("YOU LOSE!", width/2, height/2); //display the loss text
   }
   for (int i = raindrops.size()-1; i >= 0; i--) {
     Raindrop r = raindrops.get(i);
@@ -41,10 +36,7 @@ void draw() {
       raindrops.remove(i);
       score = score - 1; //if it does, reset the raindrop and remove a point
     }
-    //if (score >= 1000){
-    //  i = 0;
-    //}
   }
-  fill(255, 0, 0);
-  text(score, 50, 100);
+  fill(255, 0, 0); // gives the text a different color from the background
+  text(score, 50, 100); // displays the score in the top left
 }

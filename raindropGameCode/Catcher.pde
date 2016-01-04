@@ -10,6 +10,6 @@ class Catcher {
     fill(255, 0, 0);
     noStroke();
     loc.set(mouseX, mouseY);
-    ellipse(loc.x, loc.y, diam, diam);
+    ellipse(loc.x, loc.y, diam, diam); // allows the bucket to be displayed in certain color and circle
   }
 }
